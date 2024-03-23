@@ -1,0 +1,17 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Home - Song Recomendation{% endblock %}
+
+{% block content %}
+<section class="d-flex align-items-center vh-100">
+  <div class="container py-5">
+    <h1 class="text-center fw-bold text-white">HOW ARE YOU FEELING TODAY</h1>
+    <form action="" method="POST" class="mx-auto text-center mt-5 w-75"> 
+        <div class="mb-3">
+          <input type="text" class="form-control bg-light border border-0 shadow form-control-lg rounded-pill" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Im feeling..." name="song">
+        </div>
+        <button type="submit" class="btn btn-success rounded-pill w-25 shadow">Go</button>
+      </form>
+    </div>
+</section>
+{% endblock %}

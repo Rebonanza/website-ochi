@@ -1,0 +1,33 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Result - Song Recomendation{% endblock %}
+
+{% block content %}
+<section>
+  
+  <div class="container">
+      <h1 class="py-3 px-5 mt-5 rounded-pill bg-white shadow text-center fw-bold">SAD</h1>
+      <p class="text mt-lg-4 text-white fst-italic fs-4">HERE ARE SOME “SAD” SONGS FOR YOU, WE HOPE YOU FEEL BETTER SOON!</p>
+      <div class="row mt-4">
+        {% for track in track_info %}      
+        <div class="col-3 mb-3">
+          <div class="card text-bg-dark border border-0 shadow ">
+            {% if track.album_cover_url %}
+                <img src="{{ track.album_cover_url }}" class="card-img" alt="album" width="100">
+               
+            {% else %}
+              <img src="{{ url_for('static', filename='assets/img/album.webp') }}" class="card-img" alt="album" width="100">
+            {% endif %}
+           
+            <div class="card-img-overlay d-flex flex-column justify-content-end bg-dark bg-gradient" style="--bs-bg-opacity: .3;">
+              <h3 class="card-title fw-bold shadow">{{ track.name }}</h3>
+              <p class="card-text shadow">{{ track.artist }}</p>
+            </div>
+          </div>
+        </div>
+        
+        {% endfor %}
+      </div>
+  </div>
+</section>
+{% endblock %}
